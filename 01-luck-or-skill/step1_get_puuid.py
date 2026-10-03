@@ -7,6 +7,7 @@ import urllib.parse
 import urllib.request
 import urllib.error
 from getpass import getpass
+from pathlib import Path
 
 GAME_NAME = "우주대냥이"
 TAG_LINE = "KR1"
@@ -30,7 +31,8 @@ except urllib.error.HTTPError as e:
     print("401/403 = 키가 틀렸거나 만료됨, 404 = Riot ID 오타")
     raise SystemExit(1)
 
-with open("my_account.json", "w", encoding="utf-8") as f:
+# 어느 폴더에서 실행하든 이 파일 옆(01-luck-or-skill)에 저장한다.
+with open(Path(__file__).parent / "my_account.json", "w", encoding="utf-8") as f:
     json.dump(account, f, ensure_ascii=False, indent=2)
 
 print("성공!", account["gameName"] + "#" + account["tagLine"])
