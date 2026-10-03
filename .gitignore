@@ -1,0 +1,6 @@
+.venv/
+my_account.json
+*.key
+.env
+__pycache__/
+data/
