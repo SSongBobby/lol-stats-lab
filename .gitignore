@@ -4,3 +4,4 @@ my_account.json
 .env
 __pycache__/
 data/
+.claude/settings.local.json
